@@ -1,0 +1,54 @@
+﻿@model PlanclockWebsite.Models.Motivation
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Motivation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="reminderId" class="control-label"></label>
+                <input asp-for="reminderId" class="form-control" />
+                <span asp-validation-for="reminderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="reminderTitle" class="control-label"></label>
+                <input asp-for="reminderTitle" class="form-control" />
+                <span asp-validation-for="reminderTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="motivationText" class="control-label"></label>
+                <input asp-for="motivationText" class="form-control" />
+                <span asp-validation-for="motivationText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createDate" class="control-label"></label>
+                <input asp-for="createDate" class="form-control" />
+                <span asp-validation-for="createDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updateDate" class="control-label"></label>
+                <input asp-for="updateDate" class="form-control" />
+                <span asp-validation-for="updateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
